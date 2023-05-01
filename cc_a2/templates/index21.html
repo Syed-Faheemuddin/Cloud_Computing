@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+        function validateForm() {
+          var x = document.forms["myForm"]["surname"].value;
+          var y = document.forms["myForm"]["name"].value;
+          if (x == "" || x == null || y == "" || y == null) {
+            alert("Warning! Please fill all details.");
+            return false;
+          }
+        }
+    </script>
+    <meta charset="utf-8">
+    <title>RESTful Web Services for adding records</title>
+  </head>
+  <body>
+    <h1>Create Record</h1>
+    <form name = "myForm" method = "post" action = "/createrecord" onsubmit = "return validateForm()" required>
+    <label for="surname">Surname: </label>
+    <input type="text" id="surname" name="Surname"><br><br>
+
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name"><br><br>
+    
+    <input type="submit" value="Create Record">
+    </form>
+  </body>
+</html>
