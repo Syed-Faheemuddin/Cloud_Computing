@@ -54,7 +54,7 @@ def createRecord():
 def display_records():
     with open("records.json", "r") as f:
         data = json.load(f)
-    return render_template('records.html', records=data['details'], colnames=['id', 'surname', 'name'])
+    return render_template('records.html', records=data['details'], colnames=['id', 'surname', 'name','timestamp'])
 
 @app.route("/recordid.html", methods = ['GET'])
 def button2():
