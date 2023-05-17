@@ -67,7 +67,7 @@ def getRecord():
         data = json.load(f)
         for item in data['details']:
             if int(id) == int(item['id']):		
-            	return f"Name: <b>{str(item['name'])}</b><br>Surname: <b>{str(item['surname'])}</b><br><br><br>Timestamp: <b>{str(item['timestamp']}</b>"
+            	return f"Name: <b>{str(item['name'])}</b><br>Surname: <b>{str(item['surname'])}</b><br><br><br>Timestamp: <b>{str(item['timestamp'])}</b>"
 
 if __name__ == "__main__":
     app.run(debug = True, host='0.0.0.0',port = 8000)
