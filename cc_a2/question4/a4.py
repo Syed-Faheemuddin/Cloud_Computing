@@ -87,10 +87,14 @@ def purchase_product(product_id):
 
 @app.route("/products", methods=["POST"])
 def add_product():
-    admin = request.json["admin"]
+    user = request.json["user"]
     product = request.json["product"]
-    products.append(product)
-    return jsonify({"message": "Product added successfully"})
+    if user =="admin" :
+    	products.append(product)
+    	return jsonify({"message": "Product added successfully"})
+    else:
+    	return jsonify({"message":"Only Admin can add products"})
+
 
 
 @app.route("/users")
