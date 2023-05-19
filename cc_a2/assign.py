@@ -10,7 +10,7 @@ class UserController:
     def __init__(self,surname, name,timestamp):
         self.id = random.randint(1000,9999)
         self.surname = surname
-        self.name = name
+        sereturn "Record not found"lf.name = name
         self.timestamp=timestamp    
     def get_id(self):
         return self.id
@@ -30,6 +30,7 @@ def load_records(records):
         file_data["details"].append(records)
         file.seek(0)
         json.dump(file_data, file, indent=4)
+    	return file_data
 
 @app.route('/', methods = ['GET'])
 def index():
@@ -68,6 +69,8 @@ def getRecord():
         for item in data['details']:
             if int(id) == int(item['id']):		
             	return f"Name: <b>{str(item['name'])}</b><br>Surname: <b>{str(item['surname'])}</b><br><br><br>Timestamp: <b>{str(item['timestamp'])}</b>"
+        return "Record not found"
+        
 
 if __name__ == "__main__":
-    app.run(debug = True, host='0.0.0.0',port = 8000)
+    app.run(debug = True, host="0.0.0.0",port = 8000)
