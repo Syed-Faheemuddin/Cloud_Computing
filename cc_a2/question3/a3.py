@@ -51,6 +51,11 @@ class UserController:
         user = User(id, username, email, password)
         users.append(user)
         return jsonify(user.to_dict())
+    
+    # GET request to retrieve a users
+    def get_users(self):
+        user= self.to_dict()
+        return jsonify(user)
 
     # GET request to retrieve a user by ID
     def get_user(self, user_id):
@@ -92,9 +97,9 @@ post_controller = PostController()
 def create_user():
     return user_controller.create_user()
 
-@app.route("/users", methods=['GET'])
+@app.route("/users", methods=['GET')
 def get_all_users():
-    return jsonify(users.to_dict())
+    return user_controller.get_users()
 
 @app.route('/users/<user_id>', methods=['GET'])
 def get_user(user_id):
