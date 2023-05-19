@@ -92,7 +92,7 @@ post_controller = PostController()
 def create_user():
     return user_controller.create_user()
 
-@app.route("/users", methods=['GET')
+@app.route("/users", methods=['GET'])
 def get_all_users():
     return jsonify(users)
 
