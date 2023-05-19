@@ -30,7 +30,6 @@ def load_records(records):
         file_data["details"].append(records)
         file.seek(0)
         json.dump(file_data, file, indent=4)
-    	return file_data
 
 @app.route('/', methods = ['GET'])
 def index():
@@ -68,7 +67,7 @@ def getRecord():
         data = json.load(f)
         for item in data['details']:
             if int(id) == int(item['id']):		
-            	return f"Name: <b>{str(item['name'])}</b><br>Surname: <b>{str(item['surname'])}</b><br><br><br>Timestamp: <b>{str(item['timestamp'])}</b>"
+            	return f"Name: <b>{str(item['name'])}</b><br>Surname: <b>{str(item['surname'])}</b>"
         return "Record not found"
         
 
