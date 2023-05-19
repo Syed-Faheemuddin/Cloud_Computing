@@ -10,7 +10,7 @@ class UserController:
     def __init__(self,surname, name,timestamp):
         self.id = random.randint(1000,9999)
         self.surname = surname
-        sereturn "Record not found"lf.name = name
+        self.name = name
         self.timestamp=timestamp    
     def get_id(self):
         return self.id
