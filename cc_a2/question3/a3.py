@@ -106,4 +106,4 @@ def get_posts():
     return post_controller.get_posts()
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0.',port=8002,debug=True)
+    app.run(host='0.0.0.0',port=8002,debug=True)
